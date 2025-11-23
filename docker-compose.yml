@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: combustivel-interior
+    restart: unless-stopped
+    # Configurações de rede para o Traefik
+    networks:
+      - traefik_public # IMPORTANTE: Substitua pelo nome da sua rede externa do Traefik
+    
+    # Labels para o Traefik
+    labels:
+      - "traefik.enable=true"
+      # Substitua 'seu-dominio.com.br' pelo seu domínio real
+      - "traefik.http.routers.combustivel.rule=Host(`app.seudominio.com.br`)"
+      - "traefik.http.routers.combustivel.entrypoints=websecure"
+      - "traefik.http.routers.combustivel.tls.certresolver=myresolver" # Substitua pelo nome do seu resolver (ex: le, myresolver)
+      - "traefik.http.services.combustivel.loadbalancer.server.port=80"
+
+networks:
+  traefik_public:
+    external: true
