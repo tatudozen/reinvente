@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combustível Interior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Landing Screen -->
+    <div id="screen-landing" class="screen active">
+      <div class="logo-container">
+        <img src="/src/assets/landing-logo.jpg" alt="Reinventar-se" class="landing-logo-img">
+        <h1 class="logo-title">Reinventar-se</h1>
+        <p class="logo-subtitle">o que te move?</p>
+      </div>
+      <div class="wheel-preview">
+        <!-- Animated CSS Wheel here -->
+      </div>
+      <button id="btn-start" class="btn-primary">Começar Jornada</button>
+    </div>
+
+    <!-- Category Selection Screen -->
+    <div id="screen-selection" class="screen">
+      <div class="logo-container">
+        <h2 class="logo-title" style="font-size: 1.5rem;">Escolha seu Caminho</h2>
+      </div>
+      <div id="wheel-container" class="wheel-container">
+        <!-- SVG Wheel injected by JS -->
+        <div class="wheel-center">
+          <h3>O que te<br>move?</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Screen -->
+    <div id="screen-slider" class="screen">
+      <div class="logo-container">
+        <h2 class="logo-title" style="font-size: 1.5rem;">Escolha uma Carta</h2>
+      </div>
+      <div class="slider-container" id="slider-container">
+        <div class="slider-track" id="slider-track">
+          <!-- Cards will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Screen -->
+    <div id="screen-card" class="screen">
+      <div class="card-scene">
+        <div class="card" id="active-card">
+          <div class="card-face card-front">
+            <div class="card-header">Reinventar-se</div>
+            <div class="card-content">
+              <h3 class="card-question">Toque para revelar</h3>
+            </div>
+            <div class="card-footer" id="card-category-label">Categoria</div>
+          </div>
+          <div class="card-face card-back">
+            <div class="card-back-header" id="card-back-header">CATEGORIA</div>
+            <div class="card-content">
+              <h3 class="card-question" id="card-question-text">Pergunta aqui?</h3>
+            </div>
+            <div class="card-back-footer" id="card-back-footer">
+              <div class="footer-text-main">REINVENTAR-SE</div>
+              <div class="footer-text-sub">o que te move?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area" id="input-area">
+        <textarea id="answer-input" placeholder="Sua reflexão..."></textarea>
+        <div class="nav-buttons">
+          <button id="btn-back-card" class="btn-nav">Voltar</button>
+          <button id="btn-next-card" class="btn-nav btn-next">Próxima</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Screen -->
+    <div id="screen-quote" class="screen">
+      <div class="quote-card">
+        <p class="quote-text" id="quote-text">"Citação aqui"</p>
+        <p class="quote-author" id="quote-author">Autor</p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
