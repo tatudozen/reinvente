@@ -56,7 +56,7 @@ function createWheel() {
   svg.setAttribute("viewBox", "0 0 300 300");
   svg.style.width = "100%";
   svg.style.height = "100%";
-  svg.style.transform = "rotate(-90deg)"; // Start at top
+  svg.style.transform = "rotate(-162deg)"; // Start Curiosidade at Top Left (Reinvencao's spot)
 
   const categoryKeys = Object.keys(categories);
   const total = categoryKeys.length;

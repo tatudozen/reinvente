@@ -119,7 +119,10 @@ body {
 }
 
 .wheel-segment:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: scale(1.02);
+  /* Slight pop */
+  z-index: 10;
 }
 
 .wheel-text {
@@ -140,14 +143,15 @@ body {
   transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
-  background: var(--color-white);
+  background: #FDE047;
+  /* Yellow center */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 20;
 }
 
 .wheel-center h3 {

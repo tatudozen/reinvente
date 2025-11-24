@@ -11,9 +11,11 @@ export const categories = {
     color: '#246CA0', // Azul profundo
     image: cardCuriosidade,
     questions: [
-      "O que desperta seus sentidos e atenção hoje?",
-      "Em que momentos você se percebe observando algo com encantamento?",
-      "De que forma o ambiente à sua volta influencia sua vontade de aprender?"
+      "O que desperta seus sentidos e atenção hoje (sons, imagens, cheiros ou lugares) que fazem você sentir-se vivo(a)?",
+      "Em que momentos você se percebe observando algo com encantamento, como se fosse a primeira vez?",
+      "De que forma o ambiente à sua volta influencia sua vontade de aprender e descobrir coisas novas?",
+      "O que te enche de energia e entusiasmo ao descobrir ou compreender algo novo,mesmo em pequenas coisas do dia a dia?",
+      "Você sente que sua curiosidade aumenta quando está em um ambiente seguro e acolhedor, ou no desafio por algo novo?",
     ]
   },
   proposito: {
