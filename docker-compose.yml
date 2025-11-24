@@ -1,22 +1,26 @@
-version: '3'
+version: '3.8'
 
 services:
-  app:
-    build: .
-    container_name: combustivel-interior
-    restart: unless-stopped
+  reinvente:
+    # Em Swarm, precisamos usar uma imagem pronta
+    image: ghcr.io/tatudozen/reinvente:latest
+    # container_name não é suportado em Swarm
+    # restart é substituído por deploy.restart_policy
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        - "traefik.enable=true"
+        # Configuração para reinvente.alquimiazen.com.br
+        - "traefik.http.routers.reinvente.rule=Host(`reinvente.alquimiazen.com.br`)"
+        - "traefik.http.routers.reinvente.entrypoints=websecure"
+        - "traefik.http.routers.reinvente.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.reinvente.loadbalancer.server.port=80"
+
     # Configurações de rede para o Traefik
     networks:
-      - AZ_Net # Rede do Traefik
-
-    # Labels para o Traefik
-    labels:
-      - "traefik.enable=true"
-      # Configuração para reinvente.alquimiazen.com.br
-      - "traefik.http.routers.combustivel.rule=Host(`reinvente.alquimiazen.com.br`)"
-      - "traefik.http.routers.combustivel.entrypoints=websecure"
-      - "traefik.http.routers.combustivel.tls.certresolver=letsencryptresolver" # Resolver configurado no seu Traefik
-      - "traefik.http.services.combustivel.loadbalancer.server.port=80"
+      - AZ_Net
 
 networks:
   AZ_Net:
